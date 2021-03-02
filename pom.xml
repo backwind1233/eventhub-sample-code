@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.6.RELEASE</version>
+    <relativePath /> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>com.tdl.auth</groupId>
+  <artifactId>tdl-auth-server</artifactId>
+  <version>2.0.6</version>
+  <name>sso backend</name>
+  <description>Tata Digital Identity Provider Auth Server</description>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <azure.version>2.2.0</azure.version>
+    <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
+
+    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+    <sonar.language>java</sonar.language>
+    <jacoco.version>0.8.5</jacoco.version>
+    <sonar.coverage.exclusions>
+      **/model/*.java,
+      **/feign/*.java,
+      **/dto/*.java,
+      **/utils/*.java,
+      **/config/*.java,
+      **/socialConfig/*.java
+
+    </sonar.coverage.exclusions>
+
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web-services</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+    <!-- <dependency> <groupId>org.springframework.session</groupId> <artifactId>spring-session-data-mongodb</artifactId>
+      </dependency> -->
+
+    <dependency>
+      <groupId>org.passay</groupId>
+      <artifactId>passay</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.passay</groupId>
+      <artifactId>passay</artifactId>
+      <version>1.6.0</version>
+    </dependency>
+    <!-- <dependency> <groupId>com.google.guava</groupId> <artifactId>guava</artifactId>
+      <version>29.0-jre</version> </dependency> <dependency> <groupId>com.googlecode.json-simple</groupId>
+      <artifactId> json-simple</artifactId> <version>1.1</version> </dependency> -->
+    <!-- <dependency> <groupId>com.google.guava</groupId> <artifactId>guava</artifactId>
+      <version>29.0-jre</version> </dependency> <dependency> <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId> <version>1.1</version> </dependency> -->
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-mongodb</artifactId>
+    </dependency>
+
+    <!-- JWT LIbraries -->
+
+    <dependency>
+      <groupId>com.nimbusds</groupId>
+      <artifactId>nimbus-jose-jwt</artifactId>
+      <version>7.7</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-api</artifactId>
+      <version>0.11.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-impl</artifactId>
+      <version>0.11.1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
+      <version>0.11.1</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.1</version>
+    </dependency>
+
+    <!-- JWT Libraries end -->
+
+
+
+
+
+
+
+
+    <!-- Spring 5.0, oauth -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-oauth2</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-oauth2-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+    </dependency>
+
+
+
+
+
+    <!-- Spring 5.0, oauth end -->
+
+
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.session</groupId>
+      <artifactId>spring-session-data-redis</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.modelmapper</groupId>
+      <artifactId>modelmapper</artifactId>
+      <version>2.3.5</version>
+    </dependency>
+
+    <!-- AZURE EVENT HUB DEPENDENCY START -->
+
+<!--    <dependency>-->
+<!--      <groupId>com.microsoft.azure</groupId>-->
+<!--      <artifactId>azure-eventhubs</artifactId>-->
+<!--      <version>3.0.0</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.microsoft.azure</groupId>-->
+<!--      <artifactId>azure-eventhubs-eph</artifactId>-->
+<!--      <version>3.0.0</version>-->
+<!--    </dependency>-->
+
+    <!-- 		<dependency> -->
+    <!-- 			<groupId>junit</groupId> -->
+    <!-- 			<artifactId>junit</artifactId> -->
+    <!-- 			<scope>test</scope> -->
+    <!-- 		</dependency> -->
+
+    <!-- AZURE EVENT HUB DEPENDENCY END -->
+
+
+    <dependency>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>applicationinsights-web-auto</artifactId>
+      <version>2.5.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>applicationinsights-spring-boot-starter</artifactId>
+      <version>2.5.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>applicationinsights-logging-logback</artifactId>
+      <version>2.3.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.azure.spring</groupId>
+      <artifactId>azure-spring-cloud-stream-binder-eventhubs</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-core</artifactId>
+      <version>3.3.12.RELEASE</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.5.2</version>
+      <scope>test</scope>
+    </dependency>
+
+
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-boot-starter</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>5.3.4.Final</version>
+    </dependency>
+
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>azure-spring-boot-bom</artifactId>
+        <version>${azure.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+
+      <!--    Mockito -->
+
+
+      <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+      <!-- 			<dependency> -->
+      <!-- 				<groupId>org.mockito</groupId> -->
+      <!-- 				<artifactId>mockito-all</artifactId> -->
+      <!-- 				<version>1.8.4</version> -->
+      <!-- 				<scope>test</scope> -->
+      <!-- 			</dependency> -->
+
+
+
+
+    </dependencies>
+
+
+  </dependencyManagement>
+
+
+  <repositories>
+    <repository>
+      <id>TDL-TCP-HE</id>
+      <url>
+        https://pkgs.dev.azure.com/TDL-TCP-HE/_packaging/TDL-TCP-HE/maven/v1
+      </url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>TDL-TCP-HE</id>
+      <url>https://pkgs.dev.azure.com/TDL-TCP-HE/_packaging/TDL-TCP-HE/maven/v1</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </distributionManagement>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
