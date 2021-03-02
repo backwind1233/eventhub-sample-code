@@ -187,21 +187,7 @@
 
     <!-- AZURE EVENT HUB DEPENDENCY START -->
 
-    <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-eventhubs</artifactId>
-      <version>3.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-eventhubs-eph</artifactId>
-      <version>3.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.azure</groupId>
-      <artifactId>azure-messaging-eventhubs</artifactId>
-      <version>5.1.0</version>
-    </dependency>
+
     <!-- 		<dependency> -->
     <!-- 			<groupId>junit</groupId> -->
     <!-- 			<artifactId>junit</artifactId> -->
@@ -228,10 +214,16 @@
       <artifactId>applicationinsights-logging-logback</artifactId>
       <version>2.3.1</version>
     </dependency>
+
     <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
-      <version>1.2.8</version>
+      <groupId>com.azure.spring</groupId>
+      <artifactId>azure-spring-cloud-stream-binder-eventhubs</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-core</artifactId>
+      <version>3.3.12.RELEASE</version>
     </dependency>
 
 
