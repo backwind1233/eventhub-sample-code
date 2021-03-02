@@ -187,16 +187,6 @@
 
     <!-- AZURE EVENT HUB DEPENDENCY START -->
 
-<!--    <dependency>-->
-<!--      <groupId>com.microsoft.azure</groupId>-->
-<!--      <artifactId>azure-eventhubs</artifactId>-->
-<!--      <version>3.0.0</version>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>com.microsoft.azure</groupId>-->
-<!--      <artifactId>azure-eventhubs-eph</artifactId>-->
-<!--      <version>3.0.0</version>-->
-<!--    </dependency>-->
 
     <!-- 		<dependency> -->
     <!-- 			<groupId>junit</groupId> -->
