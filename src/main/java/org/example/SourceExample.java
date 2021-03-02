@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * @author Warren Zhu
  */
 @EnableBinding(Source.class)
 @RestController
@@ -25,6 +24,7 @@ public class SourceExample {
 
     @PostMapping("/messages")
     public String postMessage(@RequestParam String message) {
+        System.out.println("manually send message,message=" + message);
         this.source.output().send(new GenericMessage<>(message));
         return message;
     }
