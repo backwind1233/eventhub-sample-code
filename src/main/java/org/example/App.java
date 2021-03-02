@@ -1,8 +1,9 @@
 package org.example;
 
 
-import com.azure.spring.integration.core.AzureHeaders;
-import com.azure.spring.integration.core.api.reactor.AzureCheckpointer;
+
+import com.microsoft.azure.spring.integration.core.AzureHeaders;
+import com.microsoft.azure.spring.integration.core.api.reactor.AzureCheckpointer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -12,15 +13,8 @@ import org.springframework.messaging.Message;
 
 import java.util.function.Consumer;
 
-/**
- * import com.microsoft.azure.spring.integration.core.AzureHeaders; //1.2.8
- * import com.microsoft.azure.spring.integration.core.AzureCheckpointer;//1.2.8
- *
- * //1.2.8
- */
 
-//import com.microsoft.azure.spring.integration.core.AzureCheckpointer;
-//import com.microsoft.azure.spring.integration.core.AzureHeaders;
+
 
 
 @SpringBootApplication
