@@ -7,3 +7,4 @@ eventhub-sample-code
 
 - test doc 01
 - test doc 02
+- test doc 03
